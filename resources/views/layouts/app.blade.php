@@ -399,6 +399,8 @@
         <!-- Replace the existing navbar-nav section with this -->
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
+
+
         <li class="nav-item">
             <a class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}" href="{{ route('home') }}">
                 <i class="fas fa-home me-1"></i> Home
@@ -427,6 +429,7 @@
                     <i class="fas fa-user-plus me-1"></i> Register
                 </a>
             </li>
+            <!-- Add this to your navbar, just before the authentication links -->
         @else
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -436,6 +439,23 @@
                     <li>
                         <a class="dropdown-item" href="{{ route('dashboard') }}">
                             <i class="fas fa-tachometer-alt me-2"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link position-relative" href="{{ route('cart.index') }}">
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            @php
+                                $cart = Auth::check()
+                                    ? \App\Models\Cart::where('user_id', Auth::id())->first()
+                                    : \App\Models\Cart::where('session_id', session()->getId())->first();
+                                $itemCount = $cart ? $cart->totalItems : 0;
+                            @endphp
+                            @if($itemCount > 0)
+                                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    {{ $itemCount }}
+                                    <span class="visually-hidden">items in cart</span>
+                                </span>
+                            @endif
                         </a>
                     </li>
                     <li>
