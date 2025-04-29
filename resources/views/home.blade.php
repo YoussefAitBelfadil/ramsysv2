@@ -13,7 +13,7 @@
                     <a href="#featured-products" class="btn btn-hero">Shop Now</a>
                 </div>
                 <div class="col-lg-6 d-none d-lg-block">
-                    <img src="{{ asset('images/hero-pc.png') }}" alt="Gaming PC" class="img-fluid">
+                    <img src="{{ asset('images/products/pcGamer.jpeg') }}" alt="Gaming PC" class="img-fluid">
                 </div>
             </div>
         </div>
