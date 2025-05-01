@@ -3,25 +3,287 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramsys - Premium PC & Components</title>
+    <title>Ramsys</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2171/2171947.png" type="image/png">
-
-    <!-- Bootstrap CSS -->
+    <link rel="icon" href="{{ asset('images/cloud.png') }}" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <style>
+.navbar-brand span {
+    color: #0d6efd;
+}
+
+.cart-icon {
+    position: relative;
+    color: #333;
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1.5rem;
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+}
+
+/* Mobile adjustments */
+@media (max-width: 991.98px) {
+    .dropdown-menu {
+        border: none;
+        box-shadow: none;
+        padding-left: 1rem;
+        background: transparent;
+    }
+
+    .dropdown-item {
+        padding: 0.5rem 0;
+    }
+
+    .dropdown-divider {
+        margin: 0.5rem 0;
+    }
+}
+
+
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+    color: white;
+}
+
+.hero-slideshow {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-position: center;
+    z-index: -1;
+    transition: transform 7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(1);
+}
+
+.slide-bgg {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -1;
+    transition: transform 5s cubic-bezier(0.16, 1, 0.3, 1);
+    transform: scale(1);
+}
+
+.slide.active .slide-bg {
+    transform: scale(1.08);
+}
+
+.containerr {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    transform: translateX(-30px);
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s;
+}
+
+.slide.active .hero-content {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,255,255,0.3);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hero-btn i {
+    margin-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.hero-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-btn:hover {
+    background-color: rgba(0,0,0,0.5);
+    border-color: rgba(255,255,255,0.6);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.hero-btn:hover i {
+    transform: translateX(5px);
+}
+
+.slideshow-controls {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    gap: 20px;
+}
+
+.slide-prev, .slide-next {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.slide-prev:hover, .slide-next:hover {
+    background: rgba(0,0,0,0.5);
+    border-color: rgba(255,255,255,0.6);
+    transform: scale(1.1);
+}
+
+.slide-dots {
+    display: flex;
+    gap: 10px;
+}
+
+.slide-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slide-dot.active {
+    background: white;
+    transform: scale(1.3);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .hero-content {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .hero-btn {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+
+
         :root {
             --primary-color: #0066cc;
             --primary-dark: #004c99;
@@ -58,7 +320,6 @@
             font-family: 'Poppins', sans-serif;
             color: var(--gray-800);
             overflow-x: hidden;
-            background-color: #fafafa;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -170,7 +431,6 @@
         .hero-section {
             position: relative;
             min-height: 85vh;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.9), rgba(0, 76, 153, 0.85)), url('https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
             display: flex;
             align-items: center;
             color: white;
@@ -1079,41 +1339,58 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Rams<span>ys</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <a class="navbar-brand" href="#"> <img src="{{ asset('images/logo.jpg') }}" alt="Ramsys Logo" style="height: 30px"/></a>
+            <div class="d-flex align-items-center d-lg-none">
+                <a href="{{ route('cart.index') }}" class="cart-icon me-3">
+                    <i class="fas fa-shopping-cart"></i>
+                    @if(session()->has('cart') && count(session('cart')) > 0)
+                        <span class="cart-count">{{ count(session('cart')) }}</span>
+                    @endif
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link active" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Products</a>
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToClass('featured-products')">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Categories</a>
+                        <a class="nav-link" href="javascript:void(0)" onclick="scrollToClass('featured-categories')" >Categories</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                        <a class="nav-link" href="{{ route('about')}}">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="{{ route('contact')}}">Contact</a>
                     </li>
                 </ul>
-                <div class="ms-3 d-flex align-items-center">
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="btn btn-outline-primary me-2">Dashboard</a>
-                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                            @csrf
-                            <button type="submit" class="btn btn-outline-danger">Logout</button>
-                        </form>
-                    @else
-                        <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Login</a>
-                        <a href="{{ route('register') }}" class="btn btn-primary">Register</a>
-                    @endauth
-
-                    <a href="{{ route('cart.index') }}" class="ms-3 cart-icon">
+                <div class="d-flex align-items-center">
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="authDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-1"></i> 
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="authDropdown">
+                            @auth
+                                <li><a class="dropdown-item" href="{{ route('dashboard') }}"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li>
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="dropdown-item"><i class="fas fa-sign-out-alt me-2"></i>Logout</button>
+                                    </form>
+                                </li>
+                            @else
+                                <li><a class="dropdown-item" href="{{ route('login') }}"><i class="fas fa-sign-in-alt me-2"></i>Login</a></li>
+                                <li><a class="dropdown-item" href="{{ route('register') }}"><i class="fas fa-user-plus me-2"></i>Register</a></li>
+                            @endauth
+                        </ul>
+                    </div>
+                    <a href="{{ route('cart.index') }}" class="cart-icon ms-3">
                         <i class="fas fa-shopping-cart"></i>
                         @if(session()->has('cart') && count(session('cart')) > 0)
                             <span class="cart-count">{{ count(session('cart')) }}</span>
@@ -1124,19 +1401,75 @@
         </div>
     </nav>
 
+
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 hero-content" data-aos="fade-right" data-aos-duration="1000">
-                    <h1 class="hero-title">Premium PCs & Components</h1>
-                    <p class="hero-subtitle">Experience unparalleled performance with our custom-built gaming PCs and high-quality components. Built for gamers, by gamers.</p>
-                    <a href="#featured-products" class="btn btn-light hero-btn">Shop Now <i class="fas fa-arrow-right ms-2"></i></a>
-                </div>
-                <div class="col-lg-6 hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="300">
-                    <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Gaming PC" class="img-fluid">
+        <div class="hero-slideshow">
+            <!-- Slide 1 -->
+            <div class="slide active">
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                <div class="containerr">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Premium PCs & Components</h1>
+                        <p class="hero-subtitle">Experience unparalleled performance with our custom-built gaming PCs</p>
+                        <a href="#featured-products" class="hero-btn">
+                            <span>Shop Now</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
+
+            <!-- Slide 2 -->
+            <div class="slide">
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1591488320449-011701bb6704?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="containerr">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Cutting-Edge Performance</h1>
+                        <p class="hero-subtitle">Powered by the latest hardware technology for maximum FPS</p>
+                        <a href="#featured-products" class="hero-btn">
+                            <span>Explore Components</span>
+                            <i class="fas fa-microchip"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide">
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1603481588273-2f908a9a7a1b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                <div class="containerr">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Ultimate Gaming Experience</h1>
+                        <p class="hero-subtitle">Designed by gamers for the most demanding players</p>
+                        <a href="#featured-products" class="hero-btn">
+                            <span>View Gaming PCs</span>
+                            <i class="fas fa-gamepad"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="slide">
+                <div class="slide-bgg" style="background-image: url('https://img.freepik.com/free-photo/electronic-sports-league-background-3d-illustration_1419-2790.jpg?uid=R138548460&ga=GA1.1.84858734.1741686198&semt=ais_hybrid&w=740');"></div>
+                <div class="containerr">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Custom RGB Lighting</h1>
+                        <p class="hero-subtitle">Personalize your setup with stunning lighting effects</p>
+                        <a href="#featured-products" class="hero-btn">
+                            <span>Customize Now</span>
+                            <i class="fas fa-palette"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="slideshow-controls">
+            <button class="slide-prev"><i class="fas fa-chevron-left"></i></button>
+            <div class="slide-dots"></div>
+            <button class="slide-next"><i class="fas fa-chevron-right"></i></button>
         </div>
     </section>
 
@@ -1241,7 +1574,7 @@
                             <i class="fas fa-truck"></i>
                         </div>
                         <h3 class="feature-title">Free Shipping</h3>
-                        <p class="feature-description">Free shipping on all orders over $99. We deliver to your doorstep with care.</p>
+                        <p class="feature-description" style="text-align:left">Free shipping on all orders over 1000DH. We deliver to your doorstep with care.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
@@ -1249,8 +1582,8 @@
                         <div class="feature-icon">
                             <i class="fas fa-shield-alt"></i>
                         </div>
-                        <h3 class="feature-title">3-Year Warranty</h3>
-                        <p class="feature-description">All our products come with a minimum 3-year warranty for your peace of mind.</p>
+                        <h3 class="feature-title">1-Year Warranty</h3>
+                        <p class="feature-description" style="text-align:left">All our products come with a minimum 1-year warranty for your peace of mind.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
@@ -1259,7 +1592,7 @@
                             <i class="fas fa-headset"></i>
                         </div>
                         <h3 class="feature-title">24/7 Support</h3>
-                        <p class="feature-description">Our technical support team is available 24/7 to assist you with any issues.</p>
+                        <p class="feature-description" style="text-align:left">Our technical support team is available 24/7 to assist you with any issues.</p>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
@@ -1268,7 +1601,7 @@
                             <i class="fas fa-sync-alt"></i>
                         </div>
                         <h3 class="feature-title">Easy Returns</h3>
-                        <p class="feature-description">Not satisfied? Return within 30 days for a full refund, no questions asked.</p>
+                        <p class="feature-description" style="text-align:left">Not satisfied?<br/> Return within 30 days for a full refund, no questions asked.</p>
                     </div>
                 </div>
             </div>
@@ -1347,43 +1680,34 @@
         </div>
     </section>
 
-    <!-- Newsletter -->
-    <section class="newsletter">
-        <div class="container">
-            <div class="newsletter-content" data-aos="fade-up">
-                <h2 class="newsletter-title">Subscribe to Our Newsletter</h2>
-                <p class="newsletter-description">Stay updated with our latest products, exclusive deals, and tech news.</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
-                    <button type="submit" class="newsletter-btn">Subscribe</button>
-                </form>
-            </div>
-        </div>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <a href="#" class="footer-logo">Rams<span>ys</span></a>
-                    <p class="footer-description">Premium PCs and components for gamers, content creators, and professionals. Built with quality and performance in mind.</p>
-                    <div class="footer-social">
+                    <a href="#" class="footer-logo"><img src="{{ asset('images/logo.jpg') }} " alt="Ramsys Logo" style="height: 35px"  /></a>
+                    <p class="footer-description">RAMSYS is a company specializing in the sale of computer and electronic equipment, as well as the provision of
+                        IT and telecommunications services. Since its inception, it has established itself as a major player in the regional market thanks to a wide range
+                        of quality products and services.</p>
+
+                     <!-- If you want to add social media -->
+                    {{-- <div class="footer-social">
                         <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
                         <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <h4 class="footer-title">Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Products</a></li>
-                        <li><a href="#">Categories</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToClass('featured-products')">Products</a></li>
+                        <li><a href="javascript:void(0)" onclick="scrollToClass('featured-categories')">Categories</a></li>
+                        <li><a href="{{ route('about')}}">About Us</a></li>
+                        <li><a href="{{ route('contact')}}">Contact</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6" data-aos="fade-up" data-aos-delay="300">
@@ -1401,19 +1725,17 @@
                     <ul class="contact-info">
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
-                            <p>123 Tech Street, Silicon Valley, CA 94043, USA</p>
+                            <p>101, Immeuble Sibam, Angle Boulevard Mohamed V Et Avenue Moulay
+                                Hassan 1er, Place De La Liberté, Guéliz - Gueliz (AR)
+                                </p>
                         </li>
                         <li>
                             <i class="fas fa-phone-alt"></i>
-                            <p>+1 (123) 456-7890</p>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <p>info@ramsys.com</p>
+                            <p>+212-524420042</p>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
-                            <p>Monday - Friday: 9:00 AM - 8:00 PM<br>Saturday - Sunday: 10:00 AM - 6:00 PM</p>
+                            <p>Monday - Friday: 9:00 AM - 7:00 PM<br>Saturday : 9:30 AM - 3:00 PM<br>Sunday : Closed</p>
                         </li>
                     </ul>
                 </div>
@@ -1421,23 +1743,88 @@
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2023 Ramsys. All Rights Reserved. Designed by <a href="#">YourName</a></p>
+                <p>All Rights Reserved. Designed by <a href="https://github.com/YoussefAitBelfadil">YAB</a><br> &copy; {{ now()->year }} </p>
             </div>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- AOS Animation Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <!-- Custom JS -->
     <script>
-        // Initialize AOS
+        //scroll to a section using class of it
+        function scrollToClass(className) {
+         const element = document.querySelector(`.${className}`);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.slide-dots');
+    const prevBtn = document.querySelector('.slide-prev');
+    const nextBtn = document.querySelector('.slide-next');
+    let currentSlide = 0;
+    let slideInterval;
+
+    // Create dots
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('slide-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.slide-dot');
+
+    // Start slideshow
+    startSlideShow();
+
+    function startSlideShow() {
+        slideInterval = setInterval(nextSlide, 3000);
+    }
+
+    function resetSlideShow() {
+        clearInterval(slideInterval);
+        startSlideShow();
+    }
+
+    function nextSlide() {
+        goToSlide((currentSlide + 1) % slides.length);
+    }
+
+    function prevSlide() {
+        goToSlide((currentSlide - 1 + slides.length) % slides.length);
+    }
+
+    function goToSlide(n) {
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        currentSlide = n;
+
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+
+        resetSlideShow();
+    }
+
+    // Event listeners
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Pause on hover
+    const heroSection = document.querySelector('.hero-section');
+    heroSection.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    heroSection.addEventListener('mouseleave', startSlideShow);
+});
+
+
+        /////////////////////////// Initialize AOS
         AOS.init({
             duration: 800,
             easing: 'ease-in-out',
@@ -1501,10 +1888,8 @@
             });
         }
 
-        // Initial check
         checkIfInView();
 
-        // Check on scroll
         window.addEventListener('scroll', checkIfInView);
     </script>
 </body>

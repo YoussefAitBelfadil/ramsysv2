@@ -14,7 +14,6 @@ class OrderController extends Controller
 
     public function index()
     {
-        // For now, we'll use dummy data
         $orders = [
             [
                 'id' => 1001,
@@ -50,7 +49,6 @@ class OrderController extends Controller
 
     public function show($id)
     {
-        // For now, we'll use dummy data
         $order = [
             'id' => $id,
             'customer' => 'John Doe',

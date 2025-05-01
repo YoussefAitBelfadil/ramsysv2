@@ -52,4 +52,25 @@ class Product extends Model
         // In a real database model, you would use the $columns to select specific fields
         return self::getFeaturedProducts();
     }
+
+    public function reviews()
+    {
+        return $this->hasMany(ProductReview::class);
+    }
+
+    /**
+     * Get the average rating for the product.
+     */
+    public function getAverageRatingAttribute()
+    {
+        return ProductReview::getAverageRating($this->id);
+    }
+
+    /**
+     * Get the review count for the product.
+     */
+    public function getReviewCountAttribute()
+    {
+        return ProductReview::getReviewCount($this->id);
+    }
 }

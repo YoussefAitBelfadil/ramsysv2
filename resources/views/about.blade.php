@@ -7,9 +7,8 @@
     <section class="hero-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 mx-auto text-center">
-                    <h1 class="hero-title">About Ramsys</h1>
-                    <p class="hero-subtitle">Your trusted partner in high-performance computing solutions</p>
+                <div class="col-lg-8 mx-auto text-center" >
+                    <h1 class="hero-title" >About Ramsys</h1>
                 </div>
             </div>
         </div>
@@ -20,13 +19,12 @@
         <section class="mt-5">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <img src="{{ asset('images/about-us.jpg') }}" alt="About Ramsys" class="img-fluid rounded shadow-sm">
+                    <img src="{{ asset('images/SHOP3.webp') }}" alt="About Ramsys" class="img-fluid rounded shadow-sm">
                 </div>
                 <div class="col-lg-6">
                     <h2 class="mb-4">Our Story</h2>
-                    <p class="lead">Founded in 2010, Ramsys has grown from a small local shop to one of the leading providers of high-quality PCs and components.</p>
-                    <p>Our journey began with a simple mission: to provide gamers, professionals, and tech enthusiasts with reliable, high-performance computing solutions at fair prices. What started as a passion project by a group of tech enthusiasts has evolved into a trusted brand known for quality and innovation.</p>
-                    <p>Over the years, we've built a reputation for exceptional customer service, technical expertise, and a curated selection of products that meet our strict quality standards. We don't just sell computers – we build solutions that empower our customers to achieve more.</p>
+                    <p class="lead">Founded by Mr. Abou el Fadle Abderrahim in Marrakech, RAMSYS is a company specializing in the sale of computer and electronic equipment, as well as the provision of IT and telecommunications services. Since its inception, it has established itself as a major player in the regional market thanks to a wide range of quality products and services.</p>
+                    <p class="lead">The company offers a variety of IT products on demand, including computers, laptops, servers, printers, peripherals, and software from renowned brands. In addition to sales, RAMSYS offers repair, configuration, performance enhancement services, and training for the use of IT and mobile devices.</p>
                 </div>
             </div>
         </section>
@@ -75,62 +73,49 @@
         <section class="mt-5 pt-5">
             <h2 class="section-title">Meet Our Team</h2>
             <div class="row g-4">
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card border-0 shadow-sm">
-                        <img src="{{ asset('images/team-1.jpg') }}" class="card-img-top" alt="Team Member">
+                        <img src="{{ asset('images/user1.avif') }}" class="card-img-top" alt="Team Member">
                         <div class="card-body text-center">
-                            <h5 class="card-title mb-1">John Smith</h5>
-                            <p class="text-muted">Founder & CEO</p>
-                            <div class="social-links-dark mt-3">
+                            <h5 class="card-title mb-1">Abou fadel Abedrahim</h5>
+                            <p class="text-muted">Directeur générale</p>
+                            {{-- <div class="social-links-dark mt-3">
                                 <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
                                 <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
                                 <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card border-0 shadow-sm">
-                        <img src="{{ asset('images/team-2.jpg') }}" class="card-img-top" alt="Team Member">
+                        <img src="{{ asset('images/user1.avif') }}" class="card-img-top" alt="Team Member">
                         <div class="card-body text-center">
-                            <h5 class="card-title mb-1">Emily Johnson</h5>
-                            <p class="text-muted">Technical Director</p>
-                            <div class="social-links-dark mt-3">
+                            <h5 class="card-title mb-1">Maati mustafi</h5>
+                            <p class="text-muted">Directeur RH</p>
+                            {{-- <div class="social-links-dark mt-3">
                                 <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
                                 <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
                                 <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <div class="card border-0 shadow-sm">
-                        <img src="{{ asset('images/team-3.jpg') }}" class="card-img-top" alt="Team Member">
+                        <img src="{{ asset('images/user1.avif') }}" class="card-img-top" alt="Team Member">
                         <div class="card-body text-center">
-                            <h5 class="card-title mb-1">Michael Chen</h5>
-                            <p class="text-muted">Lead Engineer</p>
-                            <div class="social-links-dark mt-3">
+                            <h5 class="card-title mb-1">Abdelhamid Morchid</h5>
+                            <p class="text-muted">Directeur administratif</p>
+                            {{-- <div class="social-links-dark mt-3">
                                 <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
                                 <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
                                 <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="card border-0 shadow-sm">
-                        <img src="{{ asset('images/team-4.jpg') }}" class="card-img-top" alt="Team Member">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-1">Sarah Williams</h5>
-                            <p class="text-muted">Customer Support Manager</p>
-                            <div class="social-links-dark mt-3">
-                                <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </section>
 

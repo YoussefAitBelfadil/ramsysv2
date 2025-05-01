@@ -2,25 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title') - Ramsys Admin</title>
-
-    <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
-
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- DataTables CSS -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 
-    <!-- Custom CSS -->
     <style>
         :root {
             --primary-color: #0066cc;
@@ -210,10 +200,9 @@
 </head>
 <body>
     <div class="d-flex">
-        <!-- Sidebar -->
         <div class="admin-sidebar">
-            <a href="{{ route('admin.dashboard') }}" class="admin-logo">
-                Ramsys Admin
+            <a href="{{ route('home') }}" class="admin-logo">
+                <img src="{{ asset('images/logo.jpg') }}" alt="Ramsys Logo" style="height: 30px" />
             </a>
 
             <div class="p-3">
@@ -261,11 +250,6 @@
                         <i class="fas fa-chart-bar"></i> Reports
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">
-                        <i class="fas fa-cog"></i> Settings
-                    </a>
-                </li>
                 <li class="nav-item mt-3">
                     <a href="{{ route('home') }}" class="nav-link text-muted">
                         <i class="fas fa-store"></i> View Store
@@ -284,25 +268,12 @@
         </div>
 
         <!-- Content -->
-        <div class="admin-content">
+        <div class="admin-content ">
             <div class="admin-header d-flex justify-content-between align-items-center">
                 <h1 class="h3 mb-0">@yield('header', 'Dashboard')</h1>
                 <div>
                     <span class="text-muted me-3">{{ now()->format('l, F j, Y') }}</span>
-                    <div class="dropdown d-inline-block">
-                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="notificationsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-bell"></i>
-                            <span class="badge bg-danger">3</span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationsDropdown">
-                            <li><h6 class="dropdown-header">Notifications</h6></li>
-                            <li><a class="dropdown-item" href="#">New order received</a></li>
-                            <li><a class="dropdown-item" href="#">Product out of stock</a></li>
-                            <li><a class="dropdown-item" href="#">New customer registered</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item text-primary" href="#">View all notifications</a></li>
-                        </ul>
-                    </div>
+
                 </div>
             </div>
 
@@ -324,19 +295,13 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- DataTables JS -->
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
 
     <script>
         $(document).ready(function() {
-            // Initialize DataTables
             $('.datatable').DataTable({
                 responsive: true
             });

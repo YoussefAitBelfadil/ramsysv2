@@ -33,6 +33,7 @@
                     </tr>
                 </thead>
                 <tbody>
+                    
                     @foreach($deliveries as $delivery)
                         <tr>
                             <td>{{ $delivery['id'] }}</td>

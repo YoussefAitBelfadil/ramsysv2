@@ -9,7 +9,6 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center">
                     <h1 class="hero-title">Contact Us</h1>
-                    <p class="hero-subtitle">We'd love to hear from you. Get in touch with our team.</p>
                 </div>
             </div>
         </div>
@@ -33,7 +32,7 @@
                                 </div>
                                 <div class="col-md-6">
                                     <label for="phone" class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="phone" placeholder="(123) 456-7890">
+                                    <input type="tel" class="form-control" id="phone" placeholder="+212-438287890">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="subject" class="form-label">Subject</label>
@@ -67,7 +66,8 @@
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h5 class="mb-1">Our Location</h5>
-                                    <p class="text-muted mb-0">123 Tech Street, Silicon Valley, CA 94043, United States</p>
+                                    <p class="text-muted mb-0">101 , Immeuble Sibam,Angle Boulevard Mohamed V Et Avenue Moulay
+                                        Hassan 1er, Place De La Liberté, Guéliz - Gueliz (AR)</p>
                                 </div>
                             </li>
                             <li class="d-flex mb-4">
@@ -78,8 +78,7 @@
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h5 class="mb-1">Phone Number</h5>
-                                    <p class="text-muted mb-0">(123) 456-7890</p>
-                                    <p class="text-muted mb-0">(123) 456-7891</p>
+                                    <p class="text-muted mb-0">+212-524420042</p>
                                 </div>
                             </li>
                             <li class="d-flex mb-4">
@@ -102,8 +101,8 @@
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h5 class="mb-1">Business Hours</h5>
-                                    <p class="text-muted mb-0">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                                    <p class="text-muted mb-0">Saturday: 10:00 AM - 4:00 PM</p>
+                                    <p class="text-muted mb-0">Monday - Friday: 9:00 AM - 7:00 PM</p>
+                                    <p class="text-muted mb-0">Saturday: 9:30 AM - 3:00 PM</p>
                                     <p class="text-muted mb-0">Sunday: Closed</p>
                                 </div>
                             </li>
@@ -111,7 +110,7 @@
                     </div>
                 </div>
 
-                <div class="card border-0 shadow-sm">
+                {{-- <div class="card border-0 shadow-sm">
                     <div class="card-body p-4">
                         <h3 class="mb-4">Connect With Us</h3>
                         <div class="d-flex gap-3">
@@ -132,7 +131,7 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
 
@@ -140,62 +139,87 @@
         <div class="mt-5 mb-5">
             <div class="card border-0 shadow-sm">
                 <div class="card-body p-0">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d101268.17426770952!2d-122.12108624079342!3d37.40292338218822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb7495bec0189%3A0x7c17d44a466baf9b!2sMountain%20View%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1650000000000!5m2!1sen!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5325.7602502385635!2d-8.0053084!3d31.6293958!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafefba5881e62b%3A0xb02ee51692adb02a!2sRAMSYSMAROC!5e1!3m2!1sfr!2sma!4v1746131806818!5m2!1sfr!2sma"  width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" ></iframe>
                 </div>
             </div>
         </div>
 
         <!-- FAQ Section -->
         <section class="mt-5 mb-5">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <h2 class="section-title">Problems / Solutions</h2>
             <div class="row">
                 <div class="col-lg-10 mx-auto">
                     <div class="accordion" id="faqAccordion">
                         <div class="accordion-item border-0 mb-3 shadow-sm">
                             <h2 class="accordion-header" id="headingOne">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What is the warranty period for your products?
+                                    Non-compliant item
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    All our PCs come with a standard 2-year warranty that covers parts and labor. Individual components have warranties ranging from 1 to 5 years, depending on the manufacturer. Extended warranty options are also available for purchase.
+                                    The product is exchanged for the one you chose when ordering, with the return and resending costs being our responsibility.
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item border-0 mb-3 shadow-sm">
                             <h2 class="accordion-header" id="headingTwo">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Do you offer international shipping?
+                                    Poor condition or damaged item
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Yes, we offer international shipping to most countries. Shipping costs and delivery times vary depending on the destination. Please contact our customer service for specific information about shipping to your country.
+                                    The product will be exchanged for a new one, with shipping costs covered by us. However,
+                                    damage must be reported within 48 hours of receiving the package; after this time, the item
+                                    will not be exchanged.
+                                    If the item in question is no longer in stock, you will be refunded the amount of the order.
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item border-0 mb-3 shadow-sm">
                             <h2 class="accordion-header" id="headingThree">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    Can I customize my PC build?
+                                    The amount charged is incorrect
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    We offer custom PC building services. You can either start with one of our pre-configured builds and modify it, or work with our team to create a completely custom build based on your specific requirements and budget.
+                                    A new invoice will be sent to you if you wish, with the exact amount you paid when you placed your order.
                                 </div>
                             </div>
                         </div>
+
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header" id="headingFour">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    What payment methods do you accept?
+                                    Not delivered in a timely manner
                                 </button>
                             </h2>
                             <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    We accept all major credit cards (Visa, MasterCard, American Express, Discover), PayPal, bank transfers, and financing options through Affirm. For large orders or business purchases, we also offer purchase orders and net terms.
+                                    If the product has not been shipped, the total amount of your order will be
+                                    refunded within a maximum of 15 days.
+                                    If the product has been shipped, you must return the package to us once it has been received.
+                                    As soon as we acknowledge receipt, the amount of your order, along with the return shipping costs,
+                                    will be refunded within a maximum of 15 days.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Product failure during the warranty period
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    If the product is still under warranty and the defect that has occurred is material and not a
+                                    fault in use, you return the product in question to us for repair, with the return costs being
+                                    borne by the customer.
                                 </div>
                             </div>
                         </div>

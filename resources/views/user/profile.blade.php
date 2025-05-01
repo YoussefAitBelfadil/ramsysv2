@@ -29,12 +29,6 @@
                         <a href="#" class="list-group-item list-group-item-action">
                             <i class="fas fa-shopping-bag me-2"></i> My Orders
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="fas fa-heart me-2"></i> Wishlist
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="fas fa-address-book me-2"></i> Address Book
-                        </a>
                         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action text-danger"
                            onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
                             <i class="fas fa-sign-out-alt me-2"></i> Logout
@@ -77,7 +71,7 @@
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email Address</label>
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $user->email) }}" required>
+                                    <input readonly type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email', $user->email) }}" required>
                                     @error('email')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
@@ -89,16 +83,6 @@
                         <p class="text-muted mb-4">Leave password fields empty if you don't want to change it.</p>
 
                         <div class="row mb-4">
-                            <div class="col-md-4">
-                                <div class="mb-3">
-                                    <label for="current_password" class="form-label">Current Password</label>
-                                    <input type="password" class="form-control @error('current_password') is-invalid @enderror" id="current_password" name="current_password">
-                                    @error('current_password')
-                                        <div class="invalid-feedback">{{ $message }}</div>
-                                    @enderror
-                                </div>
-                            </div>
-
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label for="password" class="form-label">New Password</label>
@@ -123,48 +107,6 @@
                             </button>
                         </div>
                     </form>
-                </div>
-            </div>
-
-            <!-- Account Security -->
-            <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title mb-4">Account Security</h3>
-
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h5 class="mb-0">Two-Factor Authentication</h5>
-                            <span class="badge bg-danger">Not Enabled</span>
-                        </div>
-                        <p class="text-muted">Add an extra layer of security to your account by enabling two-factor authentication.</p>
-                        <button class="btn btn-outline-primary btn-sm">
-                            <i class="fas fa-shield-alt me-2"></i> Enable 2FA
-                        </button>
-                    </div>
-
-                    <div>
-                        <div class="d-flex justify-content-between align-items-center mb-2">
-                            <h5 class="mb-0">Recent Login Activity</h5>
-                        </div>
-                        <div class="table-responsive">
-                            <table class="table table-sm">
-                                <thead>
-                                    <tr>
-                                        <th>Date</th>
-                                        <th>IP Address</th>
-                                        <th>Device</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>{{ now()->format('M d, Y H:i') }}</td>
-                                        <td>127.0.0.1</td>
-                                        <td>Chrome on Windows</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>

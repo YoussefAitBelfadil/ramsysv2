@@ -30,7 +30,7 @@
                         <tr>
                             <td>{{ $product['id'] }}</td>
                             <td>
-                                <img src="{{ asset($product['image']) }}" alt="{{ $product['name'] }}" class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
+                                <img src="{{ asset('images/products/pcGamer.jpeg') }}" alt="{{ $product['name'] }}" class="img-thumbnail" style="width: 50px; height: 50px; object-fit: cover;">
                             </td>
                             <td>{{ $product['name'] }}</td>
                             <td>{{ $product['category'] }}</td>

@@ -2,15 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{{ asset('images/cloud.png') }}" type="image/png">
     <title>Ramsys - @yield('title', 'PC and Components Store')</title>
-    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -28,7 +27,7 @@
         body {
             font-family: 'Poppins', sans-serif;
             color: var(--text-color);
-            padding-top: 76px; /* For fixed navbar */
+            padding-top: 76px;
         }
 
         h1, h2, h3, h4, h5, h6 {
@@ -394,9 +393,7 @@
     </style>
 </head>
 <body>
-    <!-- Sticky Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
-        <!-- Replace the existing navbar-nav section with this -->
 <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ms-auto">
 
@@ -485,30 +482,22 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
+    <footer class="footer" style="background-color: rgb(45, 55, 72)">
+        <div class="container" >
+            <div class="row" >
                 <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                    <h5>About Ramsys</h5>
-                    <p>Your trusted source for high-quality PCs and components. We provide cutting-edge technology for gamers, professionals, and enthusiasts.</p>
-                    <div class="social-links">
+                    <h5><img src="{{ asset('images/logo.jpg') }} " alt="Ramsys Logo" style="height: 35px"  /></h5>
+                    <p class="footer-description">RAMSYS is a company specializing in the sale of computer and electronic equipment, as well as the provision of
+                        IT and telecommunications services. Since its inception, it has established itself as a major player in the regional market thanks to a wide range
+                        of quality products and services.</p>
+                    {{-- <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="{{ route('home') }}">Home</a></li>
-                        <li><a href="{{ route('about') }}">About Us</a></li>
-                        <li><a href="{{ route('contact') }}">Contact</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
                     <h5>Product Categories</h5>
                     <ul class="footer-links">
                         <li><a href="#">Gaming PCs</a></li>
@@ -518,28 +507,25 @@
                         <li><a href="#">Peripherals</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-6">
+                <div class="col-lg-4 col-md-6">
                     <h5>Contact Us</h5>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> 123 Tech Street, Silicon Valley, CA 94043</li>
-                        <li><i class="fas fa-phone me-2"></i> (123) 456-7890</li>
-                        <li><i class="fas fa-envelope me-2"></i> info@ramsys.com</li>
-                        <li><i class="fas fa-clock me-2"></i> Mon-Fri: 9AM-6PM, Sat: 10AM-4PM</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 101,Imeuble Sibam,Angle Boulevard Mohamed V <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Et Avenue Moulay
+                            Hassan 1er, <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Place De La Liberté, Guéliz - Gueliz (AR)</li>
+                        <li><i class="fas fa-phone me-2"></i> +212-524420042</li>
+                        <li><i class="fas fa-clock me-2"></i> Monday - Friday: 9:00 AM - 7:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Saturday : 9:30 AM - 3:00 PM<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sunday : Closed</li>
                     </ul>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; {{ date('Y') }} Ramsys. All rights reserved.</p>
+            <div class="copyright" >
+                <p>All Rights Reserved. Designed by <a href="https://github.com/YoussefAitBelfadil">YAB</a><br> &copy; {{ now()->year }} </p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scroll for anchor links
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();

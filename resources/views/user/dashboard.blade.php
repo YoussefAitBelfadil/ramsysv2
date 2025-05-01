@@ -29,12 +29,6 @@
                         <a href="#" class="list-group-item list-group-item-action">
                             <i class="fas fa-shopping-bag me-2"></i> My Orders
                         </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="fas fa-heart me-2"></i> Wishlist
-                        </a>
-                        <a href="#" class="list-group-item list-group-item-action">
-                            <i class="fas fa-address-book me-2"></i> Address Book
-                        </a>
                         <a href="{{ route('logout') }}" class="list-group-item list-group-item-action text-danger"
                            onclick="event.preventDefault(); document.getElementById('logout-form-sidebar').submit();">
                             <i class="fas fa-sign-out-alt me-2"></i> Logout
@@ -52,8 +46,7 @@
             <div class="card border-0 shadow-sm mb-4">
                 <div class="card-body">
                     <h2 class="card-title mb-4">Dashboard</h2>
-                    <p class="lead">Welcome back, {{ Auth::user()->name }}!</p>
-                    <p>From your account dashboard you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details.</p>
+                    <p class="lead">Welcome back, {{ Auth::user()->name }}</p>
                 </div>
             </div>
 
@@ -74,30 +67,48 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
+                                {{-- <tr>
                                     <td colspan="5" class="text-center py-4">
                                         <p class="text-muted mb-0">You haven't placed any orders yet.</p>
                                     </td>
-                                </tr>
-                                <!-- Sample order data (commented out for now) -->
-                                <!--
+                                </tr> --}}
+
                                 <tr>
-                                    <td>#1001</td>
-                                    <td>May 15, 2023</td>
+                                    <td>#01</td>
+                                    <td>May 15, 2025</td>
                                     <td><span class="badge bg-success">Completed</span></td>
                                     <td>$1,299.99</td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-primary">View</a>
                                     </td>
                                 </tr>
-                                -->
+
+                                <tr>
+                                    <td>#02</td>
+                                    <td>May 15, 2025</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                    <td>$1,299.99</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>#03</td>
+                                    <td>May 15, 2025</td>
+                                    <td><span class="badge bg-success">Completed</span></td>
+                                    <td>$1,299.99</td>
+                                    <td>
+                                        <a href="#" class="btn btn-sm btn-outline-primary">View</a>
+                                    </td>
+                                </tr>
+
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            <!-- Account Summary -->
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <div class="card border-0 shadow-sm h-100">
@@ -130,29 +141,6 @@
                 </div>
             </div>
 
-            <!-- Recommended Products -->
-            <div class="card border-0 shadow-sm">
-                <div class="card-body">
-                    <h3 class="card-title mb-4">Recommended For You</h3>
-
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        @foreach(array_slice(\App\Models\Product::getFeaturedProducts(), 0, 3) as $product)
-                            <div class="col">
-                                <div class="card h-100 product-card">
-                                    <img src="{{ asset($product['image']) }}" class="product-img" alt="{{ $product['name'] }}">
-                                    <div class="card-body d-flex flex-column">
-                                        <h5 class="card-title">{{ $product['name'] }}</h5>
-                                        <div class="mt-auto">
-                                            <p class="product-price">${{ number_format($product['price'], 2) }}</p>
-                                            <a href="{{ route('product.show', $product['id']) }}" class="btn btn-primary">View Details</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>

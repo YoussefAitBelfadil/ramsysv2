@@ -138,39 +138,6 @@
             </div>
         </div>
 
-        <div class="card admin-card mt-4">
-            <div class="card-header">
-                <h5 class="mb-0">System Status</h5>
-            </div>
-            <div class="card-body">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>
-                            <i class="fas fa-server me-2 text-success"></i> Server Status
-                        </span>
-                        <span class="badge bg-success rounded-pill">Online</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>
-                            <i class="fas fa-database me-2 text-success"></i> Database
-                        </span>
-                        <span class="badge bg-success rounded-pill">Connected</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>
-                            <i class="fas fa-hdd me-2 text-warning"></i> Disk Usage
-                        </span>
-                        <span class="badge bg-warning rounded-pill">75%</span>
-                    </li>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <span>
-                            <i class="fas fa-memory me-2 text-success"></i> Memory Usage
-                        </span>
-                        <span class="badge bg-success rounded-pill">45%</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 </div>
 @endsection
