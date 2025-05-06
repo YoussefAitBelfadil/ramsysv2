@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->string('short_description');
+            $table->decimal('price', 10, 2);
+            $table->string('image');
+            $table->enum('category', ['Desktop_PC', 'Laptop','Components','Peripherals','Accessories']);
+            $table->json('specs')->change();
             $table->timestamps();
         });
     }

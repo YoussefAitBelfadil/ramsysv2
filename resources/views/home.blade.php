@@ -1339,7 +1339,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#"> <img src="{{ asset('images/logo.jpg') }}" alt="Ramsys Logo" style="height: 30px"/></a>
+            <a class="navbar-brand" href="#"> <img loading="lazy" src="{{ asset('images/logo.jpg') }}" alt="Ramsys Logo" style="height: 30px"/></a>
             <div class="d-flex align-items-center d-lg-none">
                 <a href="{{ route('cart.index') }}" class="cart-icon me-3">
                     <i class="fas fa-shopping-cart"></i>
@@ -1372,7 +1372,7 @@
                 <div class="d-flex align-items-center">
                     <div class="dropdown">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="authDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fas fa-user-circle me-1"></i> 
+                            <i class="fas fa-user-circle me-1"></i>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="authDropdown">
                             @auth
@@ -1407,7 +1407,7 @@
         <div class="hero-slideshow">
             <!-- Slide 1 -->
             <div class="slide active">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+                <div class="slide-bg" loading="lazy"  style="background-image: url('https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=2020&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
                 <div class="containerr">
                     <div class="hero-content">
                         <h1 class="hero-title">Premium PCs & Components</h1>
@@ -1541,11 +1541,6 @@
                         <div class="product-image">
                             <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="{{ $product['name'] }}">
                             <span class="product-badge">New</span>
-                            <div class="product-actions">
-                                <a href="#" class="action-btn" title="Quick View"><i class="fas fa-eye"></i></a>
-                                <a href="#" class="action-btn" title="Add to Wishlist"><i class="fas fa-heart"></i></a>
-                                <a href="#" class="action-btn" title="Compare"><i class="fas fa-sync-alt"></i></a>
-                            </div>
                         </div>
                         <div class="product-info">
                             <div class="product-category">{{ $product['category'] }}</div>

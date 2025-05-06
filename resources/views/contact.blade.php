@@ -89,8 +89,8 @@
                                 </div>
                                 <div class="flex-grow-1 ms-3">
                                     <h5 class="mb-1">Email Address</h5>
-                                    <p class="text-muted mb-0">info@ramsys.com</p>
-                                    <p class="text-muted mb-0">support@ramsys.com</p>
+                                    <p class="text-muted mb-0">ramsysmaroc@gmail.com</p>
+                                    <p class="text-muted mb-0">contact@ramsysmaroc.ma</p>
                                 </div>
                             </li>
                             <li class="d-flex">
@@ -211,11 +211,11 @@
 
                         <div class="accordion-item border-0 shadow-sm">
                             <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFour">
                                     Product failure during the warranty period
                                 </button>
                             </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
                                     If the product is still under warranty and the defect that has occurred is material and not a
                                     fault in use, you return the product in question to us for repair, with the return costs being

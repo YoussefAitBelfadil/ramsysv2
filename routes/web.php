@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('/profile', [UserController::class, 'profile'])->name('profile');
     Route::post('/profile/update', [UserController::class, 'updateProfile'])->name('profile.update');
-    ///// Product Reviews
+    // Product Reviews
     Route::post('/reviews', [App\Http\Controllers\ProductReviewController::class, 'store'])->name('reviews.store');
     Route::get('/reviews/product/{productId}', [App\Http\Controllers\ProductReviewController::class, 'loadReviews'])->name('reviews.load');
 });

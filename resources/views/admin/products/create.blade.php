@@ -28,7 +28,7 @@
                         <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
                         <select class="form-select @error('category') is-invalid @enderror" id="category" name="category" required>
                             <option value="">Select Category</option>
-                            <option value="Desktop PC" {{ old('category') == 'Desktop PC' ? 'selected' : '' }}>Desktop PC</option>
+                            <option value="Desktop_PC" {{ old('category') == 'Desktop PC' ? 'selected' : '' }}>Desktop PC</option>
                             <option value="Laptop" {{ old('category') == 'Laptop' ? 'selected' : '' }}>Laptop</option>
                             <option value="Components" {{ old('category') == 'Components' ? 'selected' : '' }}>Components</option>
                             <option value="Peripherals" {{ old('category') == 'Peripherals' ? 'selected' : '' }}>Peripherals</option>
@@ -45,6 +45,14 @@
                 <label for="description" class="form-label">Description <span class="text-danger">*</span></label>
                 <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="4" required>{{ old('description') }}</textarea>
                 @error('description')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
+            </div>
+
+            <div class="mb-3">
+                <label for="short_description" class="form-label">short description <span class="text-danger">*</span></label>
+                <textarea class="form-control @error('short_description') is-invalid @enderror" id="short_description" name="short_description" rows="2" required>{{ old('short_description') }}</textarea>
+                @error('short_description')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>

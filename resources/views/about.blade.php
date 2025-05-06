@@ -69,55 +69,7 @@
             </div>
         </section>
 
-        <!-- Our Team -->
-        <section class="mt-5 pt-5">
-            <h2 class="section-title">Meet Our Team</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm">
-                        <img src="{{ asset('images/user1.avif') }}" class="card-img-top" alt="Team Member">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-1">Abou fadel Abedrahim</h5>
-                            <p class="text-muted">Directeur générale</p>
-                            {{-- <div class="social-links-dark mt-3">
-                                <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm">
-                        <img src="{{ asset('images/user1.avif') }}" class="card-img-top" alt="Team Member">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-1">Maati mustafi</h5>
-                            <p class="text-muted">Directeur RH</p>
-                            {{-- <div class="social-links-dark mt-3">
-                                <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card border-0 shadow-sm">
-                        <img src="{{ asset('images/user1.avif') }}" class="card-img-top" alt="Team Member">
-                        <div class="card-body text-center">
-                            <h5 class="card-title mb-1">Abdelhamid Morchid</h5>
-                            <p class="text-muted">Directeur administratif</p>
-                            {{-- <div class="social-links-dark mt-3">
-                                <a href="#" class="text-primary me-2"><i class="fab fa-linkedin"></i></a>
-                                <a href="#" class="text-primary me-2"><i class="fab fa-twitter"></i></a>
-                                <a href="#" class="text-primary"><i class="fas fa-envelope"></i></a>
-                            </div> --}}
-                        </div>
-                    </div>
-                </div>
 
-            </div>
-        </section>
 
         <!-- Our Achievements -->
         <section class="mt-5 pt-5">
